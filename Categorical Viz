@@ -1,6 +1,4 @@
-##########################################################
-## Creates discrete color palettes for vizualization of categorical values
-##########################################################
+###For creating discrete color palettes for vizualization of categorical values###
 
 main_blue <- "#007DBC"
 main_light_blue <- "#36B5C5"
@@ -236,9 +234,7 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
 wfpcolors <- as.data.frame(wfpcolors)
 
 
-##########################################################
-## Creates continuous color palettes for vizualization of continuous values
-##########################################################
+###Creates continuous color palettes for vizualization of continuous values###
 
 scale_colour_wfp_a <- function(..., type = "sequential",
                                palette = 1,
@@ -280,9 +276,7 @@ scale_colour_wfp_b <- function(..., type = "qualitative",
 
 
 
-##########################################################
-## Creates continuous color palettes for vizualization of continuous values
-##########################################################
+###Creates continuous color palettes for vizualization of continuous values###
 
 scale_fill_wfp_a <- function(..., type = "sequential",
                              palette = 1,
@@ -325,9 +319,7 @@ scale_fill_wfp_b <- function(..., type = "qualitative",
 
 
 
-##########################################################
-## Creates a series of functions to validate the palette name and ensure the the palette aligns with data type and number of categories
-##########################################################
+###Creates a series of functions to validate the palette name and ensure the the palette aligns with data type and number of categories###
 
 wfp_pal_scale <- function(type = "qualitative",
                           nmax = NULL, order = NULL,
@@ -368,9 +360,7 @@ wfp_pal_scale <- function(type = "qualitative",
 }
 
 
-##########################################################
-## Creates function to validate whether palette name is valid otherwise replaces with pal_blue
-##########################################################
+###Creates function to validate whether palette name is valid otherwise replaces with pal_blue###
 
 wfp_pal_name <- function(palette, type) {
   if (is.character(palette)) {
@@ -385,9 +375,7 @@ wfp_pal_name <- function(palette, type) {
 }
 
 
-##########################################################
-## Creates function to validate whether palette has enough categories to allow for vizualization
-##########################################################
+###Creates function to validate whether palette has enough categories to allow for vizualization###
 
 wfp_pal <- function(n = NULL, name, ...){
   if (!(name %in% wfpcolors$name)){
@@ -426,9 +414,7 @@ wfp_pal <- function(n = NULL, name, ...){
 }
 
 
-##########################################################
-## Creates a function that displays the color palettes
-##########################################################
+###Creates a function that displays the color palettes###
 
 display_wfp_all <- function(n = NULL, type = "all") {
   wfpcolors <- wfpcolors[nrow(wfpcolors):1, ]
